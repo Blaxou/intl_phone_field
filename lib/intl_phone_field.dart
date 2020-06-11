@@ -165,15 +165,7 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
             decoration: widget.decoration,
             style: widget.style,
             maxLength: widget.targetLength,
-            buildCounter: widget.targetLength == null
-                ? null
-                : (_, {currentLength, maxLength, isFocused}) {
-                    return Text("$currentLength/$maxLength",
-                        style: TextStyle(
-                            color: currentLength != maxLength
-                                ? Colors.red
-                                : null));
-                  },
+            buildCounter: widget.buildCounter,
             onSaved: (value) {
               if (widget.onSaved != null)
                 widget.onSaved(
